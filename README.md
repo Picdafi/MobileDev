@@ -1,1 +1,6 @@
-# MobileDev
+# MOBILE APPS DEVELOPER WITH FLUTTER PRAXIS ACADEMY
+### BOOTCAMP 5 AGUSTUS - 27 SEPTEMBER 2019
+
+1. Memulai Dart
+    - Dart 
+    - Konstruksi dasar Dart
