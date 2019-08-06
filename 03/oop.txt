@@ -1,0 +1,109 @@
+https://www.tutorialspoint.com/dart_programming/dart_programming_classes
+Pengertian OOP
+Object-oriented programming ( OOP ) adalah paradigma pemrograman berdasarkan konsep " objek ", yang dapat berisi data , dalam bentuk bidang (sering dikenal sebagai atribut atau properti), dan kode, dalam bentuk prosedur (sering dikenal sebagai metode ). 
+Fitur objek adalah prosedur objek yang dapat mengakses dan sering memodifikasi bidang data objek yang terkait (objek memiliki gagasan " ini " atau "diri"). 
+Bahasa OOP beragam, tetapi yang paling populer berbasis kelas , yang berarti bahwa objek adalah turunan dari kelas , yang juga menentukan jenisnya .
+
+Class pada Dart
+Kelas - definisi untuk format data dan prosedur yang tersedia untuk jenis atau kelas objek tertentu; mungkin juga berisi data dan prosedur (dikenal sebagai metode kelas) sendiri, yaitu kelas berisi data anggota dan fungsi anggota.
+Kelas dalam hal OOP adalah cetak biru untuk membuat objek. Kelas mengenkapsulasi data untuk objek. Dart memberikan dukungan bawaan untuk konsep yang disebut kelas ini.
+Definisi kelas dimulai dengan kelas kata kunci diikuti oleh nama kelas ; dan tubuh kelas tertutup oleh sepasang kurung kurawal 
+class class_name {  //Kata kunci kelas diikuti oleh nama kelas.
+   <fields> //Field adalah variabel apa pun yang dideklarasikan di kelas. Bidang mewakili data yang berkaitan dengan objek.
+   <getters/setters> //Memungkinkan program untuk menginisialisasi dan mengambil nilai-nilai bidang kelas.
+   <constructors> //bertanggung jawab untuk mengalokasikan memori untuk objek kelas.
+   <functions> //mewakili tindakan yang dapat dilakukan suatu objek. Mereka juga kadang-kadang disebut sebagai metode.
+}
+Contoh: Mendeklarasikan kelas
+class Car {  
+   // field 
+   String engine = "E1001";  
+   
+   // function 
+   void disp() { 
+      print(engine); 
+   } 
+}
+Contohnya menyatakan Mobil kelas. Kelas memiliki bidang bernama mesin . Disp () adalah fungsi sederhana yang mencetak nilai engine bidang.
+Menciptakan Instance dari kelas
+Untuk membuat turunan dari kelas, gunakan kata kunci baru diikuti dengan nama kelas.
+
+Konstruktor Dart
+Konstruktor adalah fungsi khusus dari kelas yang bertanggung jawab untuk menginisialisasi variabel kelas. Dart mendefinisikan konstruktor dengan nama yang sama dengan kelas. 
+Konstruktor adalah fungsi dan karenanya dapat diparameterisasi. Namun, tidak seperti fungsi, konstruktor tidak dapat memiliki tipe kembali. Jika Anda tidak mendeklarasikan konstruktor, konstruktor no-argumen default disediakan untuk Anda.
+Class_name(parameter_list) { 
+   //constructor body 
+}
+class_name (arguments) {  //If there is a block of code.
+  // Constructor body
+}
+or
+class_name (arguments); // If there is no block of code.
+void main() { 
+   Car c = new Car('E1001'); 
+} 
+class Car { 
+   Car(String engine) { 
+      print(engine); 
+   } 
+}
+
+
+Tipe obyek Dart
+
+Variabel instance.
+
+Getter dan Setter
+Getter tidak memiliki parameter dan mengembalikan nilai
+Return_type  get identifier 
+{ 
+} 
+setter memiliki satu parameter dan tidak mengembalikan nilai.
+set identifier 
+{ 
+}
+
+exm:
+class Student { 
+   String name; 
+   int age; 
+    
+   String get stud_name { 
+      return name; 
+   } 
+    
+   void set stud_name(String name) { 
+      this.name = name; 
+   } 
+   
+   void set stud_age(int age) { 
+      if(age<= 0) { 
+        print("Age should be greater than 5"); 
+      }  else { 
+         this.age = age; 
+      } 
+   } 
+   
+   int get stud_age { 
+      return age;     
+   } 
+}  
+void main() { 
+   Student s1 = new Student(); 
+   s1.stud_name = 'MARK'; 
+   s1.stud_age = 0; 
+   print(s1.stud_name); 
+   print(s1.stud_age); 
+} 
+
+
+
+Method
+
+Kelas abstrak
+
+Interface
+
+Extend kelas
+
+Mixins

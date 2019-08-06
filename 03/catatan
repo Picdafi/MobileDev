@@ -1,0 +1,75 @@
+1) Pengertian OOP
+Object-oriented programming (OOP) adalah paradigma pemrograman berdasarkan konsep " objek ", yang dapat berisi data , dalam bentuk bidang (sering dikenal sebagai atribut atau properti), dan kode, dalam bentuk prosedur (sering dikenal sebagai metode ). 
+
+Fitur objek adalah prosedur objek yang dapat mengakses dan sering memodifikasi bidang data objek yang terkait (objek memiliki gagasan " ini " atau "diri"). 
+
+Bahasa OOP beragam, tetapi yang paling populer berbasis kelas , yang berarti bahwa objek adalah turunan dari kelas , yang juga menentukan jenisnya .
+
+2) Class pada Dart
+Class - definisi untuk format data dan prosedur yang tersedia untuk jenis atau kelas objek tertentu; mungkin juga berisi data dan prosedur (dikenal sebagai metode kelas) sendiri, yaitu kelas berisi data anggota dan fungsi anggota.
+
+Class dalam hal OOP adalah cetak biru untuk membuat objek. Kelas mengenkapsulasi data untuk objek. Dart memberikan dukungan bawaan untuk konsep yang disebut kelas ini.
+
+Definisi kelas dimulai dengan kelas kata kunci diikuti oleh nama kelas ; dan tubuh kelas tertutup oleh sepasang kurung kurawal 
+
+class class_name {  //Kata kunci kelas diikuti oleh nama kelas.
+   <fields> //Field adalah variabel apa pun yang dideklarasikan di kelas. Bidang mewakili data yang berkaitan dengan objek.
+   <getters/setters> //Memungkinkan program untuk menginisialisasi dan mengambil nilai-nilai bidang kelas.
+   <constructors> //bertanggung jawab untuk mengalokasikan memori untuk objek kelas.
+   <functions> //mewakili tindakan yang dapat dilakukan suatu objek. Mereka juga kadang-kadang disebut sebagai metode.
+}
+
+3) Konstruktor
+Konstruktor adalah fungsi khusus dari kelas yang bertanggung jawab untuk menginisialisasi variabel kelas. Dart mendefinisikan konstruktor dengan nama yang sama dengan kelas. 
+Konstruktor adalah fungsi dan karenanya dapat diparameterisasi. 
+
+Namun, tidak seperti fungsi, konstruktor tidak dapat memiliki tipe kembali. Jika Anda tidak mendeklarasikan konstruktor, konstruktor no-argumen default disediakan untuk Anda.
+
+(secara singkat) Konstruktor : 
+- Metode yang namanya sama dengan nama kelas
+- Tidak bertipe dan bukan void
+- Otomatis dijalankan pada saat kelas diciptakan
+- Biasanya untuk inisialisasi kelas
+
+class_name (arguments) {  //jika ada blok kode .
+  // Constructor body
+}
+or
+class_name (arguments); // jika tidak ada blok kode.
+
+4) Tipe Obyek 
+
+
+5) Variabel Instance
+
+
+6) Getter dan Setter
+Getter tidak memiliki parameter dan mengembalikan nilai
+Return_type  get identifier 
+{ 
+} 
+
+setter memiliki satu parameter dan tidak mengembalikan nilai.
+set identifier 
+{ 
+}
+Getter dan Setter dapat ditempatkan setelah konstruktor.
+
+
+
+7)Method
+
+
+8) Kelas Abstrak
+
+
+9) Interface
+
+
+10) Extend Kelas
+
+
+11) Mixin
+Metode :
+
+
