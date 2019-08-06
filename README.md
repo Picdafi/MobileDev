@@ -2,7 +2,7 @@
 ## BOOTCAMP OLEH PRAXIS ACADEMY
 ### 5 AGUSTUS - 27 SEPTEMBER 2019
 
-1. Memulai Dart
+1. Memulai [Dart](https://github.com/Picdafi/MobileDev/blob/master/01.md).
     - Dart 
     - Konstruksi dasar Dart
 2. Dasar Dart
