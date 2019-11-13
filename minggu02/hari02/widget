@@ -1,0 +1,41 @@
+- Widget dalam flutter adalah elemen yang sangat penting yang digunakan untuk mengontrol tampilan antarmuka suatu aplikasi.
+
+- Pusat widget memusatkan anaknya di dalam induknya (misalnya, layar). Widget tata letak Kolom mengatur anak-anaknya (daftar widget) secara vertikal. Kolom berisi widget Teks dan widget Ikon (yang memang memiliki properti, warnanya).
+
+- Pada flutter, padding dan margin adalah widget. Tema adalah widget. Dan bahkan aplikasi dan navigasi juga termasuk widget. Ini memungkinkan kemudahan dalam mengatur tampilan antarmuka tiap elemen bisa diatur menggunakan widget.
+
+- Widget dasar :
+Tex		: Widget teks ini digunakan untuk membuat teks yang di tata dalam aplikasi yang dibuat. 
+Row Column	: ini digunakan untuk membuat tata letak fleksibel di arah horisontal (baris) dan vertikal (kolom). 
+Stack		: berorientasi linear(baik horizontal maupun vertikal). Stack digunakan untuk menumpuk widget satu sama lain dalam urutan.
+Container	: digunakan untuk membuat elemen visual persegi panjang. 
+
+kelas widget digunakan untuk menyesuaikan widget anaknya. 
+Gunakan Container jika ingin menambahkan padding, margin, batas, atau warna latar belakang, dll.
+setiap widget Teks ditempatkan dalam Container untuk menambah margin.
+Seluruh Baris juga ditempatkan dalam Container untuk menambahkan bantalan di sekitar baris
+
+Sisanya dalam contoh ini dikendalikan oleh properti. 
+Atur warna icon menggunakan properti color . 
+Gunakan properti Text.style untuk mengatur font, warna, berat, dan sebagainya. 
+Kolom dan baris memiliki properti yang memungkinkan untuk menentukan bagaimana anak-anak mereka disejajarkan secara vertikal atau horizontal, dan berapa banyak ruang yang harus ditempati anak-anak.
+
+
+Bagaimana memodifikasi aplikasi agar bereaksi terhadap input pengguna? 
+
+Dalam hal ini, dapat menambahkan interaktivitas ke aplikasi yang hanya berisi widget non-interaktif. Khususnya, jika memodifikasi ikon untuk membuatnya dapat disentuh dengan membuat widget stateful khusus yang mengelola dua widget stateless.
+
+Widget bisa stateful atau stateless.
+stateful : Jika widget dapat berubah — ketika pengguna berinteraksi /bersifat dinamis. 
+
+Widget stateful diterapkan oleh dua kelas: subclass dari StatefulWidget dan subclass of State .
+
+Subkelas StatefulWidget yang menentukan widget.
+Subkelas State yang berisi keadaan untuk widget itu dan mendefinisikan metode build() widget.
+
+stateless : tidak pernah berubah. icon , icon button , dan Teks .
+keadaan bisa berubah widget dan metode build() widget.
+
+
+Fungsi setState() yang akan bertugas untuk memberitahu framework bahwa ada object yang berubah pada State, kemudian akan melakukan build ulang pada Widget tersebut.
+

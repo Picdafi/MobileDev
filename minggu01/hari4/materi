@@ -1,0 +1,98 @@
+Collections digunakan untuk menyimpan data. 
+di Dart, koleksi dapat dikelompokkan menjadi 4 kategori dasar yaitu : 
+
+1) List
+adalah kumpulan data yang memiliki tipe data yang sama.
+Istilah lain di List disebut Array. 
+Dalam List, data disimpan dengan cara yang teratur. 
+
+Tiap elemen individu dari List dapat diakses dengan nomor indeksnya. Nomor indeksnya selalu dimulai dari 0. Jadi 0 itu adalah indeks elemen pertama dan list.
+length-1 adalah indeks elemen terakhir. 
+
+deklarasi list menggunkan kurung siku []
+List data1 = []; // sintak untuk membuat list kosong
+var data2 = []; // mendeklarasikan variabel tanpa type
+List data3 = new List(); // untuk menciptakan random object
+var data4 = new List();
+
+List bisa juga dibuat langsung dengan dengan datanya :
+
+List data5 = [12, 15, 16]; // List berisi 3 bilangan integer
+List data6 = ["pagi", "siang", "sore", "malam"]; // list dengan 4 elemen bertipe string
+List data7 = ["pagi", 5, "sedang berlangsung", 23.50]; // list berisi gabungan dari beberapa tipe data
+int x = 100;
+String s = "seratus";
+List data8 = [x, s]; // list elemen dari variabel
+
+Di List ada 2 tipe :
+- Fixed length list
+Disini setelah fixed length list ditentukan maka hal itu tidak dapat diubah selama waktu dijalankan. 
+struktur penulisan syntax:
+
+List <data type> list_name = List (length of list);
+
+- Growable list
+Length di Growable List ini dinamis. Maksudnya bisa diubah selama proses berjalan. 
+struktur penulisan syntax : 
+List <data type> list_name = List (); // Way 1
+List <data type> list_name = [element1, element2]; // Way 2 
+
+2) Maps
+Maps berguna untuk menyimpan data termasuk kuncinya.
+
+Ketika kita akan mengambil sebuah data dari sebuah Map, kita akan menggunakan kunci (key), kemudian kita akan mendapatkan nilai berdasarkan kunci tersebut. 
+
+kunci dan nilai bisa berupa tipe apa saja yang terdapat pada Dart, namum secara umum key akan bertipe String, data pada Map tidak berurutan. 
+
+Bedanya dengan List adalah Map tidak digunakan untuk menyimpan informasi secara berurutan. Dengan List, kita mengambil data dengan index yang dimulai dari 0 sampai ke n-1, dimana n adalah jumlah datanya, sedangkan Map indexnya adalah kunci yang kita buat, sebuah Map tidak boleh memiliki kunci yang sama, tetapi bisa memiliki nilai yang sama.
+
+Mirip dengan list hanya dalam Map menggunakan kurung kurawal {}, 
+Map a = {};
+var b = {};
+Map c = new Map();
+var d = new Map();
+
+Untuk deklarasi dan inisialisasi data contohnya : 
+Map ibukota = {"Indonesia":"Jakarta", "USA":"Washington", "Japan":"Tokyo"};
+Map umur = {"Anto":27, "Joko":18, "Sarah": 17, "Herri" : 33};
+
+di dalam Map juga bisa terdapat Map yang lain : 
+contoh : 
+Map pegawai = {
+                101: {"nama": "Fibriana", "Divisi": "Keuangan", "Gaji": 3000000},
+                102: {"nama": "Elisa", "Divisi": "Pemasaran", "Gaji": 1500000},
+                103: {"nama": "Samuel", "Divisi": "Legal", "Gaji": 2000000}
+              };
+
+untuk mengambil data di sebuah map, diperlukan kata kuncinya. misalkanya dari map ibukota : 
+ibukota ["Indonesia"]
+
+3) Sets
+Set beroperasi mirip dengan List (item ditambah dan dihapus tanpa identifier, tidak seperti Map), tetapi implemenetasinya sedikit berbeda, Set dalam pemrograman Dart tidak memiliki urutan, oleh karena itu, elemen yang terdapat pada Set tidak memiliki indeks, dan satu hal yang unik dari Set adalah item yang terdapat pada Set tidak boleh ada yang sama atau bersifat unik, misalnya: Set tidak bisa memiliki data integer 250 sebanyak 2 kali atau lebih.
+
+Item yang ditambahkan ke Set menggunakan metode add() dan addAll(), dimana add() untuk menambahkan satu item dan addAll() untuk item lebih dari satu. argumen pada metode addAll() adalah sebuah List. Set dapat dibuat tanpa data apapun, atau dapat dibuat dari sebuah List, hal ini dapat dilakukan dengan menggunakan from() factory method. Berikut ini adalah contoh untuk menciptakan variabel bertipe Set.
+
+Set setKosong = new Set(); // set kosong
+Set elmenDariList = new Set.from(["bunga", "buah","sayur","air"]); // menciptakan set dari list
+
+elemenDariList.add("air"); // OK, tetapi tidak akan melakukan penambahan karena api sudah ada.
+
+elemenDariList.addAll(["ikan","tanaman"]); // menambahkan ikan dan tanaman
+elemet.remove("air"); // menghapus air.
+
+
+Set awarna = new Set.from(["merah","kuning","hijau"]);
+Set bwarna = new Set.from(["biru","pink","jingga"]);
+
+Set abwarna = bwarna.intersection(awarna); // menghasilkan
+
+for(String wr in abwarna) {
+  print(warna);
+}
+
+4) Queue
+
+di Dart yang sering digunakan adalah List dan Map. Set dan Queue hanya digunakan untuk kasus khusus. 
+
+
+Generics

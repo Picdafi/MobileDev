@@ -1,98 +1,72 @@
-Collections digunakan untuk menyimpan data. 
-di Dart, koleksi dapat dikelompokkan menjadi 4 kategori dasar yaitu : 
+Pembahasan
+1) Asynchronous programming: pengertian, kelas Future dan Stream.
+Asynchronous hasil eksekusi atau output tidak selalu berdasarkan urutan kode, tetapi berdasarkan waktu proses. Eksekusi dengan asynchronous tidak akan membloking atau menunggu suatu perintah sampai selesai. Daripada menunggu, asynchronous akan mengeksekusi perintah selanjutnya. 
 
-1) List
-adalah kumpulan data yang memiliki tipe data yang sama.
-Istilah lain di List disebut Array. 
-Dalam List, data disimpan dengan cara yang teratur. 
+cara kerja asynchronous adalah berdasarkan waktu proses. Jika ada salah satu eksekusi membutuhkan proses yang agak lama, maka sembari menunggu proses tersebut dart mengeksekusi perintah selanjutnya.
 
-Tiap elemen individu dari List dapat diakses dengan nomor indeksnya. Nomor indeksnya selalu dimulai dari 0. Jadi 0 itu adalah indeks elemen pertama dan list.
-length-1 adalah indeks elemen terakhir. 
+Teknik Asynchronous paling banyak digunakan mengelola komunikasi yang tidak mungkin sinkron atau harus menunggu seperti proses request ajax, operasi file, koneksi ke database, websocket, real time communication seperti pada aplikasi chating dan masih banyak lagi.
 
-deklarasi list menggunkan kurung siku []
-List data1 = []; // sintak untuk membuat list kosong
-var data2 = []; // mendeklarasikan variabel tanpa type
-List data3 = new List(); // untuk menciptakan random object
-var data4 = new List();
+Future : ditutup, Muncul dengan beberapa nilai atau Muncul dengan kesalahan.
+Stream : ini jalur transaksi data. Kita bisa membuka jalur data, bisa melihat data apa saja yang lewat, bisa melewatkan data, bisa menutup jalur data. 
 
-List bisa juga dibuat langsung dengan dengan datanya :
+Saat await dan fungsi async, eksekusi kode di dalam caller ditunda sementara operasi async dieksekusi.
+Ketika operasi async selesai, nilai dari apa yang ditunggu terkandung dalam Future
 
-List data5 = [12, 15, 16]; // List berisi 3 bilangan integer
-List data6 = ["pagi", "siang", "sore", "malam"]; // list dengan 4 elemen bertipe string
-List data7 = ["pagi", 5, "sedang berlangsung", 23.50]; // list berisi gabungan dari beberapa tipe data
-int x = 100;
-String s = "seratus";
-List data8 = [x, s]; // list elemen dari variabel
-
-Di List ada 2 tipe :
-- Fixed length list
-Disini setelah fixed length list ditentukan maka hal itu tidak dapat diubah selama waktu dijalankan. 
-struktur penulisan syntax:
-
-List <data type> list_name = List (length of list);
-
-- Growable list
-Length di Growable List ini dinamis. Maksudnya bisa diubah selama proses berjalan. 
-struktur penulisan syntax : 
-List <data type> list_name = List (); // Way 1
-List <data type> list_name = [element1, element2]; // Way 2 
-
-2) Maps
-Maps berguna untuk menyimpan data termasuk kuncinya.
-
-Ketika kita akan mengambil sebuah data dari sebuah Map, kita akan menggunakan kunci (key), kemudian kita akan mendapatkan nilai berdasarkan kunci tersebut. 
-
-kunci dan nilai bisa berupa tipe apa saja yang terdapat pada Dart, namum secara umum key akan bertipe String, data pada Map tidak berurutan. 
-
-Bedanya dengan List adalah Map tidak digunakan untuk menyimpan informasi secara berurutan. Dengan List, kita mengambil data dengan index yang dimulai dari 0 sampai ke n-1, dimana n adalah jumlah datanya, sedangkan Map indexnya adalah kunci yang kita buat, sebuah Map tidak boleh memiliki kunci yang sama, tetapi bisa memiliki nilai yang sama.
-
-Mirip dengan list hanya dalam Map menggunakan kurung kurawal {}, 
-Map a = {};
-var b = {};
-Map c = new Map();
-var d = new Map();
-
-Untuk deklarasi dan inisialisasi data contohnya : 
-Map ibukota = {"Indonesia":"Jakarta", "USA":"Washington", "Japan":"Tokyo"};
-Map umur = {"Anto":27, "Joko":18, "Sarah": 17, "Herri" : 33};
-
-di dalam Map juga bisa terdapat Map yang lain : 
-contoh : 
-Map pegawai = {
-                101: {"nama": "Fibriana", "Divisi": "Keuangan", "Gaji": 3000000},
-                102: {"nama": "Elisa", "Divisi": "Pemasaran", "Gaji": 1500000},
-                103: {"nama": "Samuel", "Divisi": "Legal", "Gaji": 2000000}
-              };
-
-untuk mengambil data di sebuah map, diperlukan kata kuncinya. misalkanya dari map ibukota : 
-ibukota ["Indonesia"]
-
-3) Sets
-Set beroperasi mirip dengan List (item ditambah dan dihapus tanpa identifier, tidak seperti Map), tetapi implemenetasinya sedikit berbeda, Set dalam pemrograman Dart tidak memiliki urutan, oleh karena itu, elemen yang terdapat pada Set tidak memiliki indeks, dan satu hal yang unik dari Set adalah item yang terdapat pada Set tidak boleh ada yang sama atau bersifat unik, misalnya: Set tidak bisa memiliki data integer 250 sebanyak 2 kali atau lebih.
-
-Item yang ditambahkan ke Set menggunakan metode add() dan addAll(), dimana add() untuk menambahkan satu item dan addAll() untuk item lebih dari satu. argumen pada metode addAll() adalah sebuah List. Set dapat dibuat tanpa data apapun, atau dapat dibuat dari sebuah List, hal ini dapat dilakukan dengan menggunakan from() factory method. Berikut ini adalah contoh untuk menciptakan variabel bertipe Set.
-
-Set setKosong = new Set(); // set kosong
-Set elmenDariList = new Set.from(["bunga", "buah","sayur","air"]); // menciptakan set dari list
-
-elemenDariList.add("air"); // OK, tetapi tidak akan melakukan penambahan karena api sudah ada.
-
-elemenDariList.addAll(["ikan","tanaman"]); // menambahkan ikan dan tanaman
-elemet.remove("air"); // menghapus air.
+2) Konkurensi: pengertian, penggunaan isolates (https://codingwithjoe.com/dart-fundamentals-isolates/)
+Isolates adalah apa yang dijalankan oleh semua kode dart. Ini seperti sedikit ruang pada mesin dengan memori pribadi dan satu thread yang menjalankan loop Peristiwa.
+Setiap isolates memiliki tumpukan memori dan kodenya sendiri. Isolat ini berkomunikasi satu sama lain dengan mengirimkan pesan bolak-balik melalui ports.
+Setiap “Isolate” memiliki “Event Loop” dan Antriannya sendiri (MicroTask dan Event). Ini berarti bahwa kode berjalan di dalam Isolate, terlepas dari Isolate lain.
 
 
-Set awarna = new Set.from(["merah","kuning","hijau"]);
-Set bwarna = new Set.from(["biru","pink","jingga"]);
-
-Set abwarna = bwarna.intersection(awarna); // menghasilkan
-
-for(String wr in abwarna) {
-  print(warna);
-}
-
-4) Queue
-
-di Dart yang sering digunakan adalah List dan Map. Set dan Queue hanya digunakan untuk kasus khusus. 
+3) Dart platforms
+- Dart Native : program perangkat seluler, dekstop, server dll. 
+- Web Dart (JavaScript) : web, Dart Web juga menyertakan kompiler waktu pengembangan (dartdev) dan kompiler waktu produksi (dart2js) 
 
 
-Generics
+4) Command line tools
+
+
+5) Pub untuk package manager
+
+Pub adalah package manager untuk Dart. Fungsinya untuk menginstal package ke dalam proyek Dart. apabila mengembangkan aplikasi sisi web atau server menggunakan pub untuk mengunduh package.
+
+Package adalah library yang berisi fungsi-fungsi, class, dan program Dart yang bisa digunakan ulang.
+
+Pub menggunakan file pubspec.yaml untuk menentukan package yang akan digunakan pada proyek.
+
+6) Effective Dart
+- Konsisten 
+- Singkat
+dengan menggunakan dart tujuannya adalah menggunakan kode yang ekonomis(ringkas), tidak padat. Dart diciptakan 
+
+
+
+
+Synchronous adalah yang paling umum dan mudah di mengerti. Setiap perintah di eksekusi satu persatu sesuai urutan kode yang anda tuliskan. 
+console.log('Hello')
+console.log('Javascript')
+console.log('Coder')
+
+/*
+Output :
+Hello!
+Javascipt
+Coder
+*/
+Output dari kode diatas dijamin akan sesuai urutan, karena setiap perintah harus menunggu perintah sebelumnya selesai. Proses seperti ini disebut ‘blocking’.
+
+
+console.log('Hello');
+setTimeout(() => { console.log('Javascript')},100) // tunda selama 100 miliseconds
+console.log('Coder');
+
+/* ----------
+Output :
+Hello!
+Coder
+Javascipt
+------------*/
+Pada baris ke 2 setTimeout digunakan untuk menunda eksekusi dalam satuan milisecond dalam hal ini untuk simulasi prosess async.
+
+
+https://medium.com/mindorks/asynchronous-programming-in-dart-flutter-part-1-dde723332698 (contoh async + future)

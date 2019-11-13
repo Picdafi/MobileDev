@@ -1,0 +1,3 @@
+Aset adalah file yang dibundel dan digunakan dengan aplikasi Anda, dan dapat diakses saat runtime. 
+
+Jenis aset yang umum termasuk data statis (misalnya, file JSON), file konfigurasi, ikon, dan gambar (JPEG, WebP, GIF, WebP / GIF animasi, PNG, BMP, dan WBMP).

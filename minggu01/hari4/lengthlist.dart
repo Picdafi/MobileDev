@@ -21,8 +21,16 @@ main() {
   angka[5] = 50;
 
   for (int tampilangka in angka) {
-    print([tampilangka]);
+    print([tampilangka[5]]);
   }
 }
 
+
+// void main() { 
+//    var lst = new List(3); 
+//    lst[0] = 12; 
+//    lst[1] = 13; 
+//    lst[2] = 11; 
+//    print(lst[0]); 
+// }
 
