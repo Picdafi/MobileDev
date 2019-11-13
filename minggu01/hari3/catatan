@@ -70,6 +70,11 @@ Getter dan Setter dapat ditempatkan setelah konstruktor.
 
 
 11) Mixin
+Hal yang perlu diperhatikan dalam membuat kelas menjadi mixin : 
+
+Tidak boleh ada deklarasi konstruktor
+Bukan merupakan subclass dari kelaslainnya selain Object (tidak boleh menerima pewarisan)
+Tidak boleh memanggil metode menggunakan keyword "super".
 Metode :
 
-
+https://www.seredata.com/2019/07/dart-interface-casting-mixins.html
